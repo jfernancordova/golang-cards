@@ -3,8 +3,15 @@ package main
 import "fmt"
 
 func main(){
-	//var card string = "Ace of Spades"
-	card := "Ace of Spades" //first initialize the value short declaration
-	card = "Ace of Diamonds" //just assigning
+	card := newCard()
+
 	fmt.Println(card) 
+}
+
+//go is always going to expect us 
+//to label that type of data that 
+//is being exchanged around our different
+//functions inside of our program.
+func newCard() string {
+	return "Ace of Spades"
 }
