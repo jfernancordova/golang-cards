@@ -3,15 +3,13 @@ package main
 import "fmt"
 
 func main(){
-	card := newCard()
-
-	fmt.Println(card) 
+	cards := []string{"Ace of Diamonds", newCard()}
+	cards = append(cards, "Six of Spades")
+	for i, card := range cards {
+		fmt.Println(i, card)
+	}
 }
 
-//go is always going to expect us 
-//to label that type of data that 
-//is being exchanged around our different
-//functions inside of our program.
 func newCard() string {
 	return "Ace of Spades"
 }
