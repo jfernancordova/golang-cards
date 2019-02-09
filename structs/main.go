@@ -3,34 +3,34 @@ package main
 import "fmt"
 
 type contactInfo struct {
-	email string
+	email   string
 	zipCode int
 }
 
 type person struct {
 	firstName string
-	lastName string
+	lastName  string
 	contactInfo
 }
 
-func main(){
+func main() {
 	jose := person{
 		firstName: "Jose",
-		lastName: "Cordova",
+		lastName:  "Cordova",
 		contactInfo: contactInfo{
-			email: "jfernancordova@gmail.com",
+			email:   "jfernancordova@gmail.com",
 			zipCode: 1426,
 		},
 	}
-	
+
 	jose.updateName("fernando")
 	jose.print()
 }
 
-func (pointerToPerson *person) updateName(newFirstName string){
+func (pointerToPerson *person) updateName(newFirstName string) {
 	(*pointerToPerson).firstName = newFirstName
 }
 
-func (p person) print(){
-	fmt.Printf("%+v", p)
+func (pointerToPerson person) print() {
+	fmt.Printf("%+v", pointerToPerson)
 }
